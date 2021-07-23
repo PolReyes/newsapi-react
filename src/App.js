@@ -1,23 +1,24 @@
+import { ThemeProvider } from '@material-ui/core';
 import React from 'react';
-import { Route, BrowserRouter as Router, Switch, Link } from 'react-router-dom';
+import { Route, BrowserRouter as Router, Switch } from 'react-router-dom';
 import './App.css';
 import Login from './components/Login'
+import NavBar from './components/NavBar';
+import theme from './themeConfig';
 
 function App() {
   return (
     
       <Router>
     <div className="App">
-        <h1>NAVBAR- CABECERA</h1>
-        <Link to="/">
-        Inicio- 
-        </Link>
-        <Link to="/Login">
-        Iniciar Sesión
-        </Link>
+      <ThemeProvider theme={theme}>
+      <NavBar/>
+      </ThemeProvider>
+        
+        
         <Switch>
           <Route path="/" exact>
-            <h2>NOTICIAS</h2>
+            <h1>NOTICIAS</h1>
           </Route>
           <Route path="/Login">
             <Login/>
