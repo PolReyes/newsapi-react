@@ -36,7 +36,26 @@
     transform: rotate(360deg);
   }
 }
+.img{
+  width: 80%;
+  height: auto;
+  margin-top: 30px;
+}
+.img-lateral{
+  
+  width: 90%;
+  height: 100px;
+  margin-top: 25px;
+}
+.img-foot{
+  
+  width: 80%;
+  height: 220px;
+}
 .link{
   text-decoration: none;
-  color:inherit;
+  color: inherit;
+}
+.btn-position{
+  float: right;
 }
