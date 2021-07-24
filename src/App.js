@@ -18,7 +18,7 @@ function App() {
         </ThemeProvider>
         <Switch>
           <Route path="/" exact>
-            <Home />
+            <Home title="tesla" date="2021-07-19" />
           </Route>
           <Route path="/login" exact>
             <Login/>
