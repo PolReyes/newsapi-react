@@ -20,19 +20,16 @@ const NavBar = () => {
         <div>
             <AppBar position="fixed" color="primary"> 
             <Toolbar>
-                
                     <Link to="/"  className={classes.title}>
-                    <Typography variant="h5">
-                    Noticias
-                    </Typography>
+                        <Typography variant="h5">
+                        Noticias
+                        </Typography>
                     </Link>
-                    <Link to="/Login" className="link">
-                    <Button variant="contained" color="secondary">
-                    Iniciar Sesión
-                    </Button>
+                    <Link to="/login" className="link">
+                        <Button variant="contained" color="secondary">
+                        Iniciar Sesión
+                        </Button>
                     </Link>
-                
-                
             </Toolbar>
             </AppBar>
             <div className={classes.offset}></div>
