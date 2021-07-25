@@ -37,9 +37,8 @@
   }
 }
 .img{
-  width: 80%;
-  height: auto;
-  margin-top: 30px;
+  width: 90%;
+  height: 312px;
 }
 .img-lateral{
   
@@ -49,8 +48,8 @@
 }
 .img-foot{
   
-  width: 80%;
-  height: 220px;
+  width: 98%;
+  height: 240px;
 }
 .link{
   text-decoration: none;
