@@ -1,34 +1,81 @@
 import { ThemeProvider } from '@material-ui/core';
-import React from 'react';
-import { Route, BrowserRouter as Router, Switch } from 'react-router-dom';
+import React, {useState, useEffect} from 'react';
+import { Route, BrowserRouter as Router, Switch, Redirect } from 'react-router-dom';
 import './App.css';
 import Home from './components/Home';
 import Login from './components/Login';
 import Register from './components/Register';
+import Logout from './components/Logout';
 import PageError from './components/PageError';
 import NavBar from './components/NavBar';
 import theme from './themeConfig';
 
 function App() {
+  const UrlBase = "https://api-sandbox.elcomercio.pe";
+
+  const urlSDK = "https://arc-subs-sdk.s3.amazonaws.com/sandbox/sdk-identity.min.js";
+
+  const [isLogged, setIsLogged] = useState(false);
+  
+  useEffect(() => {
+    const sdkIdentity = document.createElement("script");
+    sdkIdentity.src = urlSDK;
+    sdkIdentity.onload = function () {
+      window.Identity.apiOrigin = UrlBase;
+      window.Identity.isLoggedIn()
+        .then((res) => {
+          if(res === true){
+            setIsLogged(true);
+          }
+        })
+        .catch((err) => {
+          console.log("Oops algo falló", err);
+        });
+    };
+    document.body.appendChild(sdkIdentity);
+    console.log("identity inicial: "+window.Identity);
+  }, []);
+
+  const handleLogout = () => {
+    window.Identity.logout().then((res) => {
+      setIsLogged(false);
+    });
+  };
+
+  const handleLogged = () => {
+    window.Identity.isLoggedIn()
+      .then((res) => {
+        if (res === true) {
+          setIsLogged(true);
+        }
+      })
+      .catch((err) => {
+        console.log("Oops algo falló", err);
+      });
+  };
+
   return (
     <div className="App">
       <Router>
         <ThemeProvider theme={theme}>
-          <NavBar/>
+          <NavBar isLogged={isLogged}/>
         </ThemeProvider>
         <Switch>
           <Route path="/" exact>
             <Home title="tesla" date="2021-07-19" />
           </Route>
           <Route path="/login" exact>
-            <Login/>
+            {isLogged ? <Redirect to="/" /> : <Login handleLogged={handleLogged}/>}
           </Route>
           <Route path="/register" exact>
-            <Register/>
+            {isLogged ? <Redirect to="/" /> : <Register handleLogged={handleLogged} />}
           </Route>
-          <Router>
+          <Route path="/logout" exact>
+            <Logout handleLogout={handleLogout} />
+          </Route>
+          <Route>
             <PageError />
-          </Router>
+          </Route>
         </Switch>
       </Router>
     </div>
