@@ -1,4 +1,4 @@
-import React, {useState, useEffect, Fragment} from 'react'
+import React, {Fragment} from 'react'
 import { Button, Grid} from '@material-ui/core';
 import newsDefault from '../news-default.jpg'
 
@@ -27,8 +27,9 @@ const BodyRight = (props) => {
                 <a className="link btn-position" href={item.url}><Button size="small" variant="contained" color="primary"> Ver Más</Button></a>
               </Grid>
             </Grid>
+            <br></br>
             <hr></hr>
-          </Fragment>    
+          </Fragment>   
           )):"Cargando..."
       }            
       </>

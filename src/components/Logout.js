@@ -7,9 +7,9 @@ const Logout = ({handleLogout}) => {
         handleLogout()
     }, [])
     return (
-        <>
+        <div>
         <Redirect to="/" />
-        </>
+        </div>
     );
 }
 

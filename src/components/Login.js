@@ -1,6 +1,5 @@
 import React from 'react';
-import { useState, useEffect } from "react";
-import { makeStyles } from '@material-ui/core/styles';
+import { useState } from "react";
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import FormGroup from '@material-ui/core/FormGroup';
@@ -37,7 +36,7 @@ const Login = ({handleLogged}) => {
 
     
     return (
-        <>
+        <div>
             <Grid container>
                 <Grid item md={4}>
                 </Grid>
@@ -58,7 +57,7 @@ const Login = ({handleLogged}) => {
                 <Grid item md={4}>
                 </Grid>
             </Grid>
-        </>
+        </div>
     )
 
     /*

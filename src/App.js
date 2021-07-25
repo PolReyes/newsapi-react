@@ -51,6 +51,7 @@ function App() {
       })
       .catch((err) => {
         console.log("Oops algo falló", err);
+        
       });
   };
 
@@ -58,7 +59,10 @@ function App() {
     <div className="App">
       <Router>
         <ThemeProvider theme={theme}>
+          <div>
           <NavBar isLogged={isLogged}/>
+          </div>
+          
         </ThemeProvider>
         <Switch>
           <Route path="/" exact>

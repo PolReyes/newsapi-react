@@ -49,6 +49,12 @@ const Home = (props) => {
               </Grid>
         </Grid>
         <Grid container>
+              <Grid item md={12} xs={12}>
+              <Box  p={2}>
+                <h3>Más Noticias</h3>
+                <hr></hr>
+              </Box>
+              </Grid>
               <BodyFoot listNews={listNews} />
         </Grid>
     </div>
