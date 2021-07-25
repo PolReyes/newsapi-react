@@ -58,7 +58,7 @@ const Home = (props) => {
               <BodyFoot listNews={listNews} />
         </Grid>
     </div>
-    )
+    );
 }
 
-export default Home
+export default Home;

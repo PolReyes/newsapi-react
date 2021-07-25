@@ -3,7 +3,7 @@ import {  Button } from '@material-ui/core';
 import newsDefault from '../news-default.jpg';
 
 const BodyMain = (props) => {
-    const listNews = props.listNews
+    const listNews = props.listNews;
     
     return (
       <>
@@ -22,7 +22,7 @@ const BodyMain = (props) => {
           : "Cargando...")
       }        
       </>
-    )
+    );
 }
 
-export default BodyMain
+export default BodyMain;

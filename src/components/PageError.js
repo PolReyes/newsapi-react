@@ -1,11 +1,15 @@
-import React from 'react'
+import React from 'react';
+import { Typography } from '@material-ui/core';
 
 const PageError = () => {
     return (
-        <div>
-           <h1>Página no encontrada</h1>
-        </div>
-    )
+        <>
+        <br></br>
+            <Typography variant="h1" color="error">
+                Página no encontrada
+            </Typography>
+        </>
+    );
 }
 
-export default PageError
+export default PageError;

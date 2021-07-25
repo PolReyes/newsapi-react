@@ -1,10 +1,10 @@
-import React, {Fragment} from 'react'
+import React, {Fragment} from 'react';
 import { Button, Grid} from '@material-ui/core';
-import newsDefault from '../news-default.jpg'
+import newsDefault from '../news-default.jpg';
 
 const BodyRight = (props) => {
-    const listNews = props.listNews
-    const data = []
+    const listNews = props.listNews;
+    const data = [];
     for (let index = 1; index < 4; index++) {
       listNews.articles ? 
       // console.log(listNews.articles[index]) : console.log("cargando");
@@ -33,7 +33,7 @@ const BodyRight = (props) => {
           )):"Cargando..."
       }            
       </>
-    )
+    );
 }
 
-export default BodyRight
+export default BodyRight;

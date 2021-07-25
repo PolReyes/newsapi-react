@@ -1,9 +1,9 @@
-import React, {Fragment} from 'react'
-import { Box, Button, Grid } from '@material-ui/core'
-import newsDefault from '../news-default.jpg'
+import React, {Fragment} from 'react';
+import { Box, Button, Grid } from '@material-ui/core';
+import newsDefault from '../news-default.jpg';
 
 const BodyFoot = (props) => {
-    const listNews = props.listNews
+    const listNews = props.listNews;
 
     return (
       <>  
@@ -25,7 +25,7 @@ const BodyFoot = (props) => {
         )):"Cargando..."
       }
       </>
-    )
+    );
 }
 
-export default BodyFoot
+export default BodyFoot;

@@ -184,4 +184,4 @@ const Register = ({handleLogged}) => {
       */
 }
 
-export default Register
+export default Register;

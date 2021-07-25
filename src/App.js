@@ -9,6 +9,7 @@ import Logout from './components/Logout';
 import PageError from './components/PageError';
 import NavBar from './components/NavBar';
 import theme from './themeConfig';
+import ForgotPass from './components/ForgotPass';
 
 function App() {
   const UrlBase = "https://api-sandbox.elcomercio.pe";
@@ -75,7 +76,10 @@ function App() {
             {isLogged ? <Redirect to="/" /> : <Register handleLogged={handleLogged} />}
           </Route>
           <Route path="/logout" exact>
-            <Logout handleLogout={handleLogout} />
+            {isLogged ? <Logout handleLogout={handleLogout} />  : <Redirect to="/" />}
+          </Route>
+          <Route path="/forgotPass" exact>
+            {isLogged ? <Redirect to="/" /> : <ForgotPass />}
           </Route>
           <Route>
             <PageError />

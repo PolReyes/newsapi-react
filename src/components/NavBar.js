@@ -40,7 +40,7 @@ const NavBar = ({isLogged}) => {
             }); 
         }
         
-    }, []);
+    }, [isLogged]);
     
     return (
         <>
@@ -81,7 +81,7 @@ const NavBar = ({isLogged}) => {
             </AppBar>
             <div className={classes.offset}></div>
         </>
-    )
+    );
 }
 
-export default NavBar
+export default NavBar;

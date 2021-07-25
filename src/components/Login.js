@@ -1,10 +1,8 @@
 import React from 'react';
 import { useState } from "react";
-import TextField from '@material-ui/core/TextField';
-import Button from '@material-ui/core/Button';
-import FormGroup from '@material-ui/core/FormGroup';
-import FormLabel from '@material-ui/core/FormLabel';
+import {FormGroup, FormLabel, TextField, Typography, Button} from '@material-ui/core';
 import { Box, Grid } from '@material-ui/core';
+import { Link } from 'react-router-dom';
 
 
 const Login = ({handleLogged}) => {
@@ -49,16 +47,21 @@ const Login = ({handleLogged}) => {
                         <FormGroup>    
                             <TextField type="email" name="emailLogin" label="Ingresar email" required onChange={handleInput} /><br />
                             <TextField type="password" name="passLogin" label="Ingresar contraseña" required onChange={handleInput} /><br/>
-                            <Button type="button" variant="contained" color="primary" onClick={handleSubmit}>Ingresar</Button>
+                            <Button type="button" name="btnLogin" variant="contained" color="primary" onClick={handleSubmit}>Ingresar</Button>
                         </FormGroup>
                     </form>
                 </Box>
+                <Link to="/ForgotPass" className="link">
+                    <Button variant="contained">
+                        Olvidé mi contraseña
+                    </Button>
+                </Link>
                 </Grid>
                 <Grid item md={4}>
                 </Grid>
             </Grid>
         </div>
-    )
+    );
 
     /*
     return (
@@ -89,4 +92,4 @@ const Login = ({handleLogged}) => {
       
 }
 
-export default Login
+export default Login;
