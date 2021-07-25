@@ -1,6 +1,6 @@
-import React, {useState, useEffect} from 'react'
-import {  Button } from '@material-ui/core'
-import newsDefault from '../news-default.jpg'
+import React, {useState, useEffect} from 'react';
+import {  Button } from '@material-ui/core';
+import newsDefault from '../news-default.jpg';
 
 const BodyMain = (props) => {
     const listNews = props.listNews
